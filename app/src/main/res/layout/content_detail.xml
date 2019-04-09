@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".ui.detail.DetailActivity"
+        tools:showIn="@layout/activity_detail"
+        android:padding="@dimen/padding_normal">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/detailListenersTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            tools:text="4533565 listeners"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/detail_top_tracks"/>
+
+        <TextView
+                android:id="@+id/detailTracksEmptyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                tools:text="@string/detail_message_error"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/tracksRecyclerView"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

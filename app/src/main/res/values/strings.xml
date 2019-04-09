@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Last.fm demo</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search for an artist…</string>
+
+    <string name="search_message_empty">Tap on Search icon to search for an artist.</string>
+    <string name="search_message_error">Sorry, an error occurred: %1$s :(\nPlease try again.</string>
+    <string name="search_message_searching">Searching…</string>
+
+    <string name="detail_tracks_template">%1$d. %2$s</string>
+    <string name="detail_listeners_template">%1$s listeners</string>
+    <string name="detail_top_tracks">Top tracks</string>
+    <string name="detail_message_loading">Loading tracks…</string>
+    <string name="detail_message_error">Sorry could not load tracks :(</string>
+
+    <string name="share_text">Hey, check out this artist! %1$s</string>
+</resources>
