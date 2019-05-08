@@ -12,20 +12,17 @@ class SearchPresenter(private val view: SearchContract.View, private val artists
     private var subscription: Disposable? = null
 
     override fun getArtistsForName(name: String) {
-        view.showLoading(true)
 
         subscription = artistsRepository.getArtists(name)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { view.showLoading(true) }
+            .doOnTerminate { view.showLoading(false) }
             .subscribe(
                 // onNext
-                {
-                    view.showLoading(false)
-                    view.showArtistMatches(it)
-                },
+                { view.showArtistMatches(it) },
                 // onError
                 {
-                    view.showLoading(false)
                     view.showError(it)
                     Log.e("SearchPresenter", it.message)
                 })
